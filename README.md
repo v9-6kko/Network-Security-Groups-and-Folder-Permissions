@@ -28,7 +28,7 @@ This tutorial will quickly outline network security groups and setting permissio
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://files.catbox.moe/7dvoom.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 To begin, log into Active Directory using the admin profile as shown in the Active Directory tutorial.
@@ -39,7 +39,7 @@ Once in, we’re going to be creating four folders: Read-Access, Write-Access, N
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://files.catbox.moe/uw1op7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 After you’ve made the folders, right click each one and change the properties of the folder. Under the sharing tab add Domain users and set their permissions. They should be as follows:
@@ -54,7 +54,7 @@ No-Access > Domain Admins Read/Write
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://files.catbox.moe/wb7jtz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 The accounting folder will be able to be accessed by a new security group named Accountants. Within Active Directory, create the group and add a user profile to the group.
@@ -63,7 +63,7 @@ The accounting folder will be able to be accessed by a new security group named 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://files.catbox.moe/v9t0a7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Add the newly created Accountants group to the Accounting folder with the permissions Read/Write.

@@ -1,6 +1,4 @@
-<p align="center">
-<img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
-</p>
+
 
 <h1>Network Security Groups (NSGs) and Folder Permissions</h1>
 This tutorial will quickly outline network security groups and setting permissions for folders. <br />

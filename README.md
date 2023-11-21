@@ -6,7 +6,7 @@ This tutorial will quickly outline network security groups and setting permissio
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
+- ### [YouTube: Network Security Groups and Folder Permissions](https://youtu.be/IUkPXZ2UZmc)
 
 <h2>Environments and Technologies Used</h2>
 

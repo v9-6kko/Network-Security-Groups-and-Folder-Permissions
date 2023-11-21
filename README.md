@@ -2,8 +2,8 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+<h1>Network Security Groups (NSGs) and Folder Permissions</h1>
+This tutorial will quickly outline network security groups and setting permissions for folders. <br />
 
 
 <h2>Video Demonstration</h2>
@@ -14,21 +14,18 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
-- Various Command-Line Tools
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
-- Wireshark (Protocol Analyzer)
+- Active Directory
 
 <h2>Operating Systems Used </h2>
 
 - Windows 10 (21H2)
-- Ubuntu Server 20.04
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Create Folders
+- Create Groups
+- Assign Permissions
+- Test
 
 <h2>Actions and Observations</h2>
 
@@ -36,7 +33,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To begin, log into Active Directory using the admin profile as shown in the Active Directory tutorial.
+
+Once in, we’re going to be creating four folders: Read-Access, Write-Access, No-Access, and Accounting. The names are not important, but for the sake of this tutorial I have decided to name them based on the permissions they will be assigned.
+
 </p>
 <br />
 
@@ -44,7 +44,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+After you’ve made the folders, right click each one and change the properties of the folder. Under the sharing tab add Domain users and set their permissions. They should be as follows:
+
+Read-Accesss > Read 
+
+Write-Access > Read/Write
+
+No-Access > Domain Admins Read/Write
+
 </p>
 <br />
 
@@ -52,6 +59,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The accounting folder will be able to be accessed by a new security group named Accountants. Within Active Directory, create the group and add a user profile to the group.
+
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Add the newly created Accountants group to the Accounting folder with the permissions Read/Write.
+
+Once all of these steps are done, log into a VM that is added to your Active Directory server with a non admin user. Test to see which folders you are able to view/edit.
+
 </p>
 <br />
